@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="Icon" href="https://help.apple.com/assets/67104C956810595555038D9A/67104C9D2EEB5C79B1030278/en_US/67aaf9dbe30989c25cbde6c6ec099213.png">
+    <title>Weather Forecast</title>
+</head>
+<body class="bg-gray-100 ">
+    <div class="w-full font-bold bg-blue-500 h-12 ">
+      <h1 class="text-white text-3xl text-center pt-2"> weather forcasrt
+      </h1>
+  </div>
+    <div class="h-full w-full">
+      <div class="flex flex-col lg:flex-row justify-center items-center">
+          
+          <!-- Left Section: City Input & Button -->
+          <div class="flex flex-col items-center mb-5 lg:mb-0 lg:w-1/3">
+              <h1 class="mt-3 text-3xl text-center">
+                  Enter a city name:
+              </h1>
+              <div class="relative">
+                  <input type="text" id="city_input" placeholder="  eg. delhi (doubble click for dropdown)" class="border rounded-lg mt-3 w-72 h-10">
+                  <div id="dropdown" class=" w-full bg-white border rounded-md shadow-md mt-1 hidden"></div>
+              </div>
+              <br>
+              <button id="search_btn" class="bg-blue-500 hover:bg-blue-400 text-white text-center rounded-lg w-72 h-10">Search</button>
+              <br>
+              <div class="flex items-center mt-3">
+                  <div class="border-t border-gray-300 flex-grow"></div>
+                  <span class="mx-4 text-gray-500">or</span>
+                  <div class="border-t border-gray-300 flex-grow"></div>
+              </div>
+              <button id="getWeatherBtn" class="bg-blue-200 hover:bg-blue-100 w-72 h-10 rounded-lg text-gray-500 mt-3">Use current Location</button>
+          </div>
+  
+          <!-- Right Section: Current Weather & Forecast -->
+          <div class="bg-white rounded-lg shadow-md p-6 lg:w-3/5 lg:m-5 md:w-2/3">
+              <!-- Current Weather -->
+              <div id="current-weather" class="bg-blue-500 text-white p-6 rounded-lg flex items-center justify-between mb-6">
+                <div>
+                  <h2 class="text-2xl font-bold" id="city_name"></h2>
+                  <p id="current_date" class="text-sm"></p>
+                  <p class="mt-2">Temperature: <span id="current_temp"></span>°C</p>
+                  <p>Wind: <span id="current_wind"></span> M/S</p>
+                  <p>Humidity: <span id="current_humidity"></span>%</p>
+                </div>
+                <div class="text-center">
+                  <img id="current_icon" class="w-16 mx-auto" alt="Weather Icon">
+                  <p id="current_description" class="capitalize"></p>
+                </div>
+              </div>
+  
+              <!-- 5-Day Forecast -->
+              <h3 class="text-lg font-bold mb-4">5-Day Forecast</h3>
+              <div id="forecast" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"></div>
+          </div>
+  
+      </div>
+  </div>
+    <script src="script.js"></script>
+</body>
+</html>
