@@ -1,4 +1,4 @@
-const apiKey = "Enter_your_own_key";
+const apiKey = "bbc8c3f2fcfa49814cf3d1ffa77ecbc3";
 const btn=document.getElementById("search_btn");
 const cityInput = document.getElementById("city_input");
 const dropdown = document.getElementById("dropdown");
@@ -42,7 +42,8 @@ btn.addEventListener("click", () => {
   });
 
 //Dropdown event Listener
-cityInput.addEventListener("dblclick", () => {
+cityInput.addEventListener("click", (event) => {
+    event.stopPropagation();
     let cities = loadRecentCities();
     dropdown.innerHTML = cities.map(city => `<div class="p-2  hover:bg-gray-100 cursor-pointer">${city}</div>`).join("");
     dropdown.classList.remove("hidden");
